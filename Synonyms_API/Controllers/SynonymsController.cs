@@ -24,7 +24,7 @@ namespace Synonyms_API.Controllers
         }
 
         [HttpGet("{word}")]
-        public IActionResult Get(string word)
+        public IActionResult Get(string word = "wash")
         {
             var synonyms = _synonymService.GetSynonyms(word);
             return Ok(synonyms);

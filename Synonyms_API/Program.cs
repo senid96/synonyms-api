@@ -1,7 +1,9 @@
+using Synonyms_API.Services;
+
 var builder = WebApplication.CreateBuilder(args);
-
+// Register services
+builder.Services.AddSingleton<ISynonym, SynonymService>();
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

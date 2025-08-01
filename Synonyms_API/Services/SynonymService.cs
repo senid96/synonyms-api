@@ -5,6 +5,24 @@
         private readonly Dictionary<string, string> parent = [];
         private readonly Dictionary<string, HashSet<string>> groups = [];
 
+        public SynonymService()
+        {
+            // Hardcoded initial synonym
+            var initialSynonyms = new List<(string, string)>
+            {
+                ("wash", "clean"),
+                ("clean", "rinse"),
+                ("quick", "fast"),
+                ("rapid", "quick"),
+                ("small", "tiny"),
+                ("tiny", "mini")
+            };
+
+            foreach (var (a, b) in initialSynonyms)
+            {
+                AddSynonym(a, b);
+            }
+        }
         private string Find(string word)
         {
             if (!parent.ContainsKey(word))

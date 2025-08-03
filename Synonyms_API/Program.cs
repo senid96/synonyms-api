@@ -1,5 +1,7 @@
 using Synonyms_API.Services;
 
+var allowedOrigins = "_allowedOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 // Register services
 builder.Services.AddSingleton<ISynonym, SynonymService>();
@@ -9,7 +11,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowedOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:5173",
+                                             "http://www.todo-prod-one.com")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod(); ;
+                      });
+});
+
 var app = builder.Build();
+
+app.UseCors(allowedOrigins);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

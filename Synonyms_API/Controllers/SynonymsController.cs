@@ -17,9 +17,9 @@ namespace Synonyms_API.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add([FromQuery] string word1, [FromQuery] string word2)
+        public IActionResult Add([FromBody] AddSynonymDTO synonyms)
         {
-            _synonymService.AddSynonym(word1, word2);
+            _synonymService.AddSynonym(synonyms.FirstWord, synonyms.SecondWord);
             return Ok();
         }
 

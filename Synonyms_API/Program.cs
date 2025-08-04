@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
                       policy =>
                       {
                           policy.WithOrigins("http://localhost:5173",
-                                             "http://www.todo-prod-one.com")
+                                             "https://synonyms-ui.netlify.app")
                           .AllowAnyHeader()
                           .AllowAnyMethod(); ;
                       });

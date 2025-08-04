@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36121.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synonyms_API", "Synonyms_API\Synonyms_API.csproj", "{7333F2D2-DDDB-4581-B53B-3DB96234A55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synonyms_API_Tests", "Synonyms_API_Tests\Synonyms_API_Tests.csproj", "{4CBBBFF7-1FDB-4F1C-AF52-0381814E3C16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synonyms_API.Tests", "Synonyms_API_Tests\Synonyms_API.Tests.csproj", "{4CBBBFF7-1FDB-4F1C-AF52-0381814E3C16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
